@@ -22,5 +22,5 @@ Route::Post('login', 'HomeController@postLogin');
 
 Route::group(array('before' => 'auth'), function(){
 	Route::get('admin', 'AdminController@index');
-	Route::get('logout', 'HOmeController@logout');
+	Route::get('logout', 'HomeController@logout');
 });

@@ -20,34 +20,9 @@ class HomeController extends BaseController {
 		return View::make('hello');
 	}
 
-	public function getRegister()
-	{
-		return View::make('home.register');
-	}
-
 	public function getLogin()
 	{
 		return View::make('home.login');
-	}
-
-	public function postRegister()
-	{
-		try 
-		{
-			$user = Sentry::createUser(array(
-				'first_name'	=> Input::get('first_name'),
-				'last_name'		=> Input::get('last_name'),
-				'email'			=> Input::get('email'),
-				'activated'		=> true,
-			
-				));
-		}
-
-		catch (Cartalyst\Sentry\Users\UserExistsException $e)
-		{
-			echo 'User Alreadt Exists';
-		}
-		
 	}
 
 	public function postLogin()
